@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.js.cashToHome.Entities.LocationDetails;
 import com.js.cashToHome.Service.LocationDetailService;
 
-@CrossOrigin(origins = "http://localhost:4200")	
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 public class LocationDetailsController{
 
@@ -24,8 +24,20 @@ public class LocationDetailsController{
 		locService.saveDetails(locDetails);
 	}
 	
-	@GetMapping(value="/getAll")
+	@RequestMapping(value = "/sample")
+	public String sample() {
+		return "Hi";
+	}
+	
+	@RequestMapping(value="/getAll")
 	public List<LocationDetails> retLocDetails(){
 		return locService.getAll();
+	}
+	
+	@RequestMapping(value="/modifyReq")
+	public void modifyReq(@RequestBody LocationDetails locDetails) {
+		System.out.println("Hi");
+		System.out.println(locDetails.getId()+ " " +locDetails.getRequestAccepted());
+		locService.modifyRequest(locDetails.getId(), locDetails.getRequestAccepted());
 	}
 }

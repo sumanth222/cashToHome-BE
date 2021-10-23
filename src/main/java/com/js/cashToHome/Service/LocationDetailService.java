@@ -21,4 +21,10 @@ public class LocationDetailService{
 	public List<LocationDetails> getAll(){
 		return locRepo.findAll();
 	}
+	
+	public void modifyRequest(Long id,String reqStatus) {
+		LocationDetails locDetails =  locRepo.getById(id);
+		locDetails.setRequestAccepted(reqStatus);
+		locRepo.save(locDetails);
+	}
 }

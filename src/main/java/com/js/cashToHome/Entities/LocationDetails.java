@@ -23,51 +23,84 @@ public class LocationDetails {
 	private String lat;
 	private String lng;
 	private String address;
+	private String requestAccepted;
 	
 	
 	public LocationDetails() {
 		super();
 	}
-	
-	
-	public LocationDetails(Long id, String userName, String lat, String lng, String address) {
+
+ 
+	public LocationDetails(Long id, String userName, String lat, String lng, String address, String requestAccepted) {
 		super();
 		this.id = id;
 		this.userName = userName;
 		this.lat = lat;
 		this.lng = lng;
 		this.address = address;
+		this.requestAccepted = requestAccepted;
+	}
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+
+	public String getLat() {
+		return lat;
+	}
+
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+
+	public String getLng() {
+		return lng;
+	}
+
+
+	public void setLng(String lng) {
+		this.lng = lng;
 	}
 
 
 	public String getAddress() {
 		return address;
 	}
+
+
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Long getId() {
-		return id;
+
+
+	public String getRequestAccepted() {
+		return requestAccepted;
 	}
-	public void setId(Long id) {
-		this.id = id;
+
+
+	public void setRequestAccepted(String requestAccepted) {
+		this.requestAccepted = requestAccepted;
 	}
-	public String getUserName() {
-		return userName;
-	}
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	public String getLat() {
-		return lat;
-	}
-	public void setLat(String lat) {
-		this.lat = lat;
-	}
-	public String getLng() {
-		return lng;
-	}
-	public void setLng(String lng) {
-		this.lng = lng;
-	}	
+	
+	
+	
 }
